@@ -1,8 +1,10 @@
 <h2 id="title">Welcome to Ember</h2>
 
 {{ff-radio value=1 groupValue=someValue disabled=disabled on-change=(action (mut someValue))}}
-{{ff-radio value=2 groupValue=someValue disabled=disabled on-change=(action (mut someValue))}}
+{{ff-radio radioId="second" value=2 groupValue=someValue disabled=disabled on-change=(action (mut someValue))}}
 {{ff-radio value=3 groupValue=someValue disabled=disabled on-change=(action (mut someValue))}}
+
+<label for="second">Label For 2nd</label>
 
 <div>
   <button {{action 'setValue' 3}}>Set Value</button>

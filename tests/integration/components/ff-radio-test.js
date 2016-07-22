@@ -86,3 +86,19 @@ test('it is not checked unless groupValue==value', function(assert) {
 
     assert.equal(this.$('input')[0].checked, false, 'radio remains unchecked');
 });
+
+test('an id can be passed down to the radio', function(assert) {
+  assert.expect(1);
+
+  this.render(hbs`{{ff-radio radioId="foo"}}`);
+
+  assert.equal(this.$('input').attr('id'), 'foo', 'id correct');
+});
+
+test('the id generates normally if no radioId is provided', function(assert) {
+  assert.expect(1);
+
+  this.render(hbs`{{ff-radio}}`);
+
+  assert.ok(/ember\d+/.test(this.$('input').attr('id')), 'id is a default ember id');
+});
